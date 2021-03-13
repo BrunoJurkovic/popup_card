@@ -29,7 +29,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, this.title = 'Flutter Demo Home Page'})
+      : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -48,17 +49,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -108,11 +98,58 @@ class _MyHomePageState extends State<MyHomePage> {
         tag: 'test',
         child: Icon(Icons.add),
         popUp: PopUpItem(
+          padding: EdgeInsets.all(8),
+          color: Colors.white,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
+          elevation: 2,
           tag: 'test',
-          builder: Center(
-            child: Text('HELLOOOO'),
-          ),
+          child: PopUpItemBody(),
         ),
+      ),
+    );
+  }
+}
+
+class PopUpItemBody extends StatelessWidget {
+  const PopUpItemBody({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const TextField(
+            decoration: InputDecoration(
+              hintText: 'New todo',
+              border: InputBorder.none,
+            ),
+            cursorColor: Colors.white,
+          ),
+          const Divider(
+            color: Colors.white,
+            thickness: 0.2,
+          ),
+          const TextField(
+            decoration: InputDecoration(
+              hintText: 'Write a note',
+              border: InputBorder.none,
+            ),
+            cursorColor: Colors.white,
+            maxLines: 6,
+          ),
+          const Divider(
+            color: Colors.white,
+            thickness: 0.2,
+          ),
+          TextButton(
+            onPressed: () {},
+            child: const Text('Add'),
+          ),
+        ],
       ),
     );
   }

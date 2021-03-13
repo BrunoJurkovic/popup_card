@@ -12,7 +12,7 @@ import 'package:popup_card/src/hero_route.dart';
 /// {@endtemplate}
 class AddTodoButton extends StatelessWidget {
   /// {@macro add_todo_button}
-  const AddTodoButton({Key key}) : super(key: key);
+  const AddTodoButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ const String _heroAddTodo = 'add-todo-hero';
 /// {@endtemplate}
 class _AddTodoPopupCard extends StatelessWidget {
   /// {@macro add_todo_popup_card}
-  const _AddTodoPopupCard({Key key}) : super(key: key);
+  const _AddTodoPopupCard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
