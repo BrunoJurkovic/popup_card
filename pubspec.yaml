@@ -1,8 +1,8 @@
 name: popup_card
-description: A new Flutter package project.
+description: Simple way to show the user some information on require an input.
 version: 0.1.0
 author: Bruno Jurković
-homepage: github.com/BrunoJurkovic
+homepage: https://github.com/BrunoJurkovic/popup_card
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
