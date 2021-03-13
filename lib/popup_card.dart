@@ -1,8 +1,10 @@
+// NOTE: Most of the credit for this code goes to 'funwithflutter' on GitHub
 library popup_card;
 
 import 'package:flutter/material.dart';
 import 'package:popup_card/src/hero_route.dart';
 
+// [PopupItemLauncher], when wrapped around a widget like an [Icon], launches the [PopUpItem] widget.
 class PopupItemLauncher extends StatelessWidget {
   final Object tag;
   final Widget child;
@@ -29,10 +31,23 @@ class PopupItemLauncher extends StatelessWidget {
   }
 }
 
+// This is the actual pop up card. You provide this to [PopUpItemLauncher].
 class PopUpItem extends StatelessWidget {
   final Object tag;
   final Widget builder;
-  const PopUpItem({Key key, this.tag, this.builder}) : super(key: key);
+  final Color color;
+  final double elevation;
+  final EdgeInsetsGeometry padding;
+  final ShapeBorder shape;
+  const PopUpItem(
+      {Key key,
+      this.tag,
+      this.builder,
+      this.color,
+      this.elevation,
+      this.padding,
+      this.shape})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,46 +57,13 @@ class PopUpItem extends StatelessWidget {
         child: Hero(
           tag: tag,
           child: Material(
-            color: Colors.black54,
-            elevation: 2,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
+            color: color,
+            elevation: elevation,
+            shape: shape,
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: padding,
                 child: builder,
-                // child: Column(
-                //   mainAxisSize: MainAxisSize.min,
-                //   children: [
-                //     const TextField(
-                //       decoration: InputDecoration(
-                //         hintText: 'New todo',
-                //         border: InputBorder.none,
-                //       ),
-                //       cursorColor: Colors.white,
-                //     ),
-                //     const Divider(
-                //       color: Colors.white,
-                //       thickness: 0.2,
-                //     ),
-                //     const TextField(
-                //       decoration: InputDecoration(
-                //         hintText: 'Write a note',
-                //         border: InputBorder.none,
-                //       ),
-                //       cursorColor: Colors.white,
-                //       maxLines: 6,
-                //     ),
-                //     const Divider(
-                //       color: Colors.white,
-                //       thickness: 0.2,
-                //     ),
-                //     TextButton(
-                //       onPressed: () {},
-                //       child: const Text('Add'),
-                //     ),
-                //   ],
-                // ),
               ),
             ),
           ),
