@@ -1,5 +1,6 @@
-
-
+[![GitHub issues](https://img.shields.io/github/issues/BrunoJurkovic/popup_card)](https://github.com/BrunoJurkovic/popup_card/issues)
+[![GitHub stars](https://img.shields.io/github/stars/BrunoJurkovic/popup_card)](https://github.com/BrunoJurkovic/popup_card/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/BrunoJurkovic/popup_card)](https://github.com/BrunoJurkovic/popup_card/network)
 
 <!-- PROJECT LOGO -->
 <br />
