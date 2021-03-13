@@ -12,17 +12,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
+          // This is the theme of your application.
+          //
+          // Try running your application with "flutter run". You'll see the
+          // application has a blue toolbar. Then, without quitting the app, try
+          // changing the primarySwatch below to Colors.green and then invoke
+          // "hot reload" (press "r" in the console where you ran "flutter run",
+          // or simply save your changes to "hot reload" in a Flutter IDE).
+          // Notice that the counter didn't reset back to zero; the application
+          // is not restarted.
+          primarySwatch: Colors.blue,
+          brightness: Brightness.light),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -96,7 +96,16 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: PopupItemLauncher(
         tag: 'test',
-        child: Icon(Icons.add),
+        child: Material(
+          color: Colors.white,
+          elevation: 2,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
+          child: const Icon(
+            Icons.add_rounded,
+            size: 56,
+          ),
+        ),
         popUp: PopUpItem(
           padding: EdgeInsets.all(8),
           color: Colors.white,
