@@ -9,13 +9,15 @@ class PopupItemLauncher extends StatelessWidget {
   final Object? tag;
   final Widget? child;
   final Widget? popUp;
-  const PopupItemLauncher({Key? key, this.tag, this.child, this.popUp})
+  final double luncherPadding;
+  const PopupItemLauncher(
+      {Key? key, this.tag, this.child, this.popUp, this.luncherPadding = 32.0})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(32.0),
+      padding: EdgeInsets.all(luncherPadding),
       child: GestureDetector(
         onTap: () {
           Navigator.of(context).push(HeroDialogRoute(builder: (context) {
